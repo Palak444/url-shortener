@@ -7,8 +7,8 @@ Allows users to create short URLs, track click statistics, and manage links via 
 
 ## Live Demo
 
-Try the live app here: [Your Deployed App URL](https://example.com)  
-*(Replace the link above with your actual deployed URL once your app is live)*
+Try the live app here: [Live Demo](https://url-shortener1-isch.onrender.com)
+
 
 ---
 
