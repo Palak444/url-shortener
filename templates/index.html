@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        /* 🔵 NAVBAR */
+        .navbar {
+            background: #1976d2;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* 🔵 MAIN CONTAINER */
+        .container {
+            background: #2196f3;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            color: white;
+            margin: 50px auto;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* 🔥 BUTTON */
+        button {
+            background: white;
+            color: #2196f3;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e3e3e3;
+            transform: scale(1.05);
+        }
+
+        .output {
+            margin-top: 15px;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        a.link {
+            color: #2196f3;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .copy-btn {
+            background: #4CAF50;
+            color: white;
+        }
+    </style>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard: " + text);
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- 🔵 NAVBAR -->
+<div class="navbar">
+    <div><b>URL Shortener</b></div>
+    <div>
+        <span>👤 {{ username }}</span>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<!-- 🔵 MAIN CONTENT -->
+<div class="container">
+    <h2>Create Short URL</h2>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL" required>
+        <input type="text" name="custom" placeholder="Custom code (optional)">
+        <br>
+        <button type="submit">Shorten</button>
+    </form>
+
+    {% if message %}
+        <div class="output">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}
+
+    {% if short_url %}
+        <div class="output">
+            <h3>Your Short Link</h3>
+
+            <a id="shortLink" class="link" href="{{ short_url }}" target="_blank">
+                {{ short_url }}
+            </a>
+
+            <!-- Copy button copies full short URL -->
+            <button class="copy-btn" onclick="copyToClipboard('{{ short_url }}')">Copy</button>
+        </div>
+    {% endif %}
+
+    {% if clicks is not none %}
+        <div class="output">
+            <h3>Clicks</h3>
+            <p>{{ clicks }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
