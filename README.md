@@ -9,6 +9,24 @@ Allows users to create short URLs, track click statistics, and manage links via 
 
 Try the live app here: [Live Demo](https://url-shortener1-isch.onrender.com)
 
+---
+
+## Screenshots
+
+### Login Page
+![Login Page](screenshots/loginpage.png)
+
+### Enter URL
+![Enter URL](screenshots/enter_url.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Click Analytics
+![Click Analytics](screenshots/graphical-analytics.png)
+
+### Click Count Example
+![Clicks](screenshots/clicks.png)
 
 ---
 
@@ -26,22 +44,4 @@ Try the live app here: [Live Demo](https://url-shortener1-isch.onrender.com)
 
 - **Backend:** Python 3, Flask  
 - **Database:** SQLite  
-- **Frontend:** HTML, CSS  
-
----
-
-## How to Run Locally
-
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/palak444/url-shortener.git
-   cd Linkshortener
-
-
-## Screenshots
-
-![Enter URL](screenshots/enter_url.png)
-![Dashboard](screenshots/dashboard.png)
-![Clicks](screenshots/clicks.png)
-![Login](screenshots/loginpage.png)
-![Analytics](screenshots/graphical_analytics.png)
+- **Frontend:** HTML, CSS
